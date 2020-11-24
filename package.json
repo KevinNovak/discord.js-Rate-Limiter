@@ -1,0 +1,47 @@
+{
+    "name": "discord.js-rate-limiter",
+    "version": "1.0.0",
+    "author": "Kevin Novak",
+    "description": "Rate limiter for discord.js.",
+    "license": "MIT",
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "scripts": {
+        "lint": "tslint --project .",
+        "lint:fix": "tslint --fix --project .",
+        "format": "prettier --check .",
+        "format:fix": "prettier --write .",
+        "build": "tsc",
+        "test": "npm run build && node --enable-source-maps dist/test.js"
+    },
+    "dependencies": {
+        "discord.js": "12.5.0",
+        "limiter": "1.1.5"
+    },
+    "devDependencies": {
+        "@types/node": "14.14.9",
+        "prettier": "^2.2.0",
+        "tslint": "^6.1.3",
+        "typescript": "^4.1.2"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/KevinNovak/discord.js-Rate-Limiter.git"
+    },
+    "keywords": [
+        "cooldown",
+        "discord",
+        "discord.js",
+        "extension",
+        "extensions",
+        "language",
+        "limit",
+        "limiter",
+        "rate",
+        "throttle",
+        "throttling",
+        "util",
+        "utilities",
+        "utility"
+    ]
+}
