@@ -20,8 +20,7 @@ import { RateLimiter } from 'discord.js-rate-limiter';
 
 ```typescript
 import { Client } from 'discord.js';
-
-import { RateLimiter } from './rate-limiter';
+import { RateLimiter } from 'discord.js-rate-limiter';
 
 let Config = require('../config/config.json');
 
