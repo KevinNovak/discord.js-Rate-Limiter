@@ -5,6 +5,11 @@ export class RateLimiter {
 
     constructor(private amount: number, private interval: number) {}
 
+    /**
+     * Takes a token from the rate limiter.
+     * @param key A key which identifies the entity being limited (Ex: a username or ID).
+     * @returns Whether this action exceeds the rate limit.
+     */
     public take(key: string): boolean {
         let limiter = this.limiters[key];
         if (!limiter) {
