@@ -6,7 +6,9 @@ let Config = require('../config/config.json');
 
 // Allows 1 command every 2 seconds
 let rateLimiter = new RateLimiter(1, 2000);
-let client = new Client();
+let client = new Client({
+    intents: ['GUILDS', 'GUILD_MESSAGES'],
+});
 
 client.on('ready', () => {
     console.log(`Logged in as '${client.user.tag}'!`);
