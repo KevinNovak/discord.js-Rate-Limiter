@@ -1,6 +1,6 @@
 {
     "name": "discord.js-rate-limiter",
-    "version": "1.0.8-beta",
+    "version": "1.0.7-r1",
     "author": "Kevin Novak",
     "description": "Rate limiter for discord.js.",
     "license": "MIT",
@@ -15,7 +15,7 @@
         "test": "npm run build && node --enable-source-maps dist/test.js"
     },
     "dependencies": {
-        "discord.js": "github:discordjs/discord.js#63ff6a0",
+        "discord.js": "github:discordjs/discord.js#e848d25c86fcd4a11a7879f7dcd55d0bc93faa6d",
         "limiter": "1.1.5"
     },
     "devDependencies": {
