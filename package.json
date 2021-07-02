@@ -14,8 +14,10 @@
         "build": "tsc",
         "test": "npm run build && node --enable-source-maps dist/test.js"
     },
+    "peerDependencies": {
+        "discord.js": ">=12.0.0"
+    },
     "dependencies": {
-        "discord.js": "12.5.3",
         "limiter": "1.1.5"
     },
     "devDependencies": {

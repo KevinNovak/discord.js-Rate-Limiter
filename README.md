@@ -1,7 +1,7 @@
 # discord.js-Rate-Limiter
 
 [![NPM Version](https://img.shields.io/npm/v/discord.js-rate-limiter.svg?maxAge=3600)](https://www.npmjs.com/package/discord.js-rate-limiter)
-[![discord.js Version](https://img.shields.io/npm/dependency-version/discord.js-rate-limiter/discord.js)](https://discord.js.org/)
+[![discord.js Version](https://img.shields.io/npm/dependency-version/discord.js-rate-limiter/peer/discord.js)](https://discord.js.org/)
 [![Downloads](https://img.shields.io/npm/dt/discord.js-rate-limiter.svg?maxAge=3600)](https://www.npmjs.com/package/discord.js-rate-limiter)
 
 Multilingual utilities for [discord.js](https://github.com/discordjs/discord.js/).
