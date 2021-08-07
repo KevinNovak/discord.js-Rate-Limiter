@@ -19,20 +19,20 @@ import { RateLimiter } from 'discord.js-rate-limiter';
 ## Example Usage
 
 ```typescript
-import { Client } from 'discord.js';
+import { Client, Intents } from 'discord.js';
 import { RateLimiter } from 'discord.js-rate-limiter';
 
 let Config = require('../config/config.json');
 
 // Allows 1 command every 2 seconds
 let rateLimiter = new RateLimiter(1, 2000);
-let client = new Client();
+let client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES] });
 
 client.on('ready', () => {
     console.log(`Logged in as '${client.user.tag}'!`);
 });
 
-client.on('message', async msg => {
+client.on('messageCreate', async msg => {
     // Don't respond to bots
     if (msg.author.bot) {
         return;
