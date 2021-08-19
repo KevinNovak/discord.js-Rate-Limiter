@@ -9,7 +9,7 @@ let rateLimiter = new RateLimiter(1, 2000);
 let client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES] });
 
 client.on('ready', () => {
-    console.log(`Logged in as '${client.user.tag}'!`);
+    console.log(`Logged in as '${client.user?.tag}'!`);
 });
 
 client.on('messageCreate', async msg => {
