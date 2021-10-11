@@ -1,6 +1,6 @@
 {
     "name": "discord.js-rate-limiter",
-    "version": "1.2.2",
+    "version": "1.2.3",
     "author": "Kevin Novak",
     "description": "Rate limiter for discord.js.",
     "license": "MIT",
