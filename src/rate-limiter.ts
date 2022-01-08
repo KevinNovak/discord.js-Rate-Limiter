@@ -3,7 +3,7 @@ import { RateLimiter as Limiter } from 'limiter';
 export class RateLimiter {
     private limiters: { [key: string]: Limiter } = {};
 
-    constructor(private amount: number, private interval: number) {}
+    constructor(public amount: number, public interval: number) {}
 
     /**
      * Takes a token from the rate limiter.
