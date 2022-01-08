@@ -26,7 +26,7 @@
         "discord.js": ">=13.0.0"
     },
     "dependencies": {
-        "limiter": "1.1.5"
+        "limiter": "2.1.0"
     },
     "devDependencies": {
         "@types/node": "17.0.8",

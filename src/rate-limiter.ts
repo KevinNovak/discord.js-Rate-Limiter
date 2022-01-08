@@ -13,7 +13,10 @@ export class RateLimiter {
     public take(key: string): boolean {
         let limiter = this.limiters[key];
         if (!limiter) {
-            limiter = new Limiter(this.amount, this.interval);
+            limiter = new Limiter({
+                tokensPerInterval: this.amount,
+                interval: this.interval,
+            });
             this.limiters[key] = limiter;
         }
 
@@ -21,11 +24,7 @@ export class RateLimiter {
             return true;
         }
 
-        limiter.removeTokens(1, (error: any) => {
-            if (error) {
-                throw error;
-            }
-        });
+        limiter.removeTokens(1);
 
         return false;
     }
