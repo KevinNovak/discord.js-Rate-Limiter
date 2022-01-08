@@ -20,8 +20,8 @@ client.on('messageCreate', async msg => {
 
     if (msg.content === 'test') {
         // Check if user is rate limited
-        let limited = rateLimiter.take(msg.author.id);
-        if (limited) {
+        let result = rateLimiter.take(msg.author.id);
+        if (result.limited) {
             // Send back a message (or you may want to just drop the request)
             await msg.channel.send(`You're doing that do often, please try again later!`);
             return;

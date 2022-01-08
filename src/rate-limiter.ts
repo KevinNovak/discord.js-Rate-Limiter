@@ -1,5 +1,20 @@
 import { RateLimiter as Limiter } from 'limiter';
 
+type LimitResult = {
+    /**
+     * Whether this action exceeds the rate limit.
+     */
+    limited: boolean;
+    /**
+     * The current interval start time.
+     */
+    start: number;
+    /**
+     * The current interval end time.
+     */
+    end: number;
+};
+
 export class RateLimiter {
     private limiters: { [key: string]: Limiter } = {};
 
@@ -8,9 +23,9 @@ export class RateLimiter {
     /**
      * Takes a token from the rate limiter.
      * @param key A key which identifies the entity being limited (Ex: a username or ID).
-     * @returns Whether this action exceeds the rate limit.
+     * @returns The result of performing this action.
      */
-    public take(key: string): boolean {
+    public take(key: string): LimitResult {
         let limiter = this.limiters[key];
         if (!limiter) {
             limiter = new Limiter({
@@ -20,12 +35,18 @@ export class RateLimiter {
             this.limiters[key] = limiter;
         }
 
+        let result: LimitResult = {
+            limited: false,
+            start: limiter.curIntervalStart,
+            end: limiter.curIntervalStart + this.interval,
+        };
+
         if (limiter.getTokensRemaining() < 1) {
-            return true;
+            result.limited = true;
+            return result;
         }
 
         limiter.removeTokens(1);
-
-        return false;
+        return result;
     }
 }
